@@ -23,7 +23,9 @@ The model was trained on a dataset obtained from the [UCI Machine Learning Repos
 
 The dataset was split into training and testing sets with an *80-20* split.
 
-Cleaning data include remove trailing spaces in columns names and values, also change the value `?` to `Unknown` for categorical columns for better readability. 
+Cleaning data include remove trailing spaces in columns names and values, also change the value `?` to `Unknown` for categorical columns for better readability.
+
+As an inference pipeline, it includes `One-hot-encoding` of categorical features and `Label-binarizer` for the target feature.
 
 ## Evaluation Data
 The evaluation data is the 20% split of the original census dataset that was not used for training. This data was used to evaluate the performance of the model
