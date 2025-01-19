@@ -1,0 +1,6 @@
+[core]
+    remote = aws_remote
+['remote "gdrive_remote"']
+    url = gdrive://10QNZKTIZKWPh899SQb_KXICCQx09mO3D
+['remote "aws_remote"']
+    url = s3://deploying-ml-model-to-cloud-project
