@@ -4,6 +4,7 @@ scikit-learn
 pytest
 flake8
 requests
+httpx
 fastapi
 uvicorn
 dvc
