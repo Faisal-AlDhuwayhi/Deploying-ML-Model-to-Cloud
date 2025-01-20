@@ -1,7 +1,6 @@
 import os
 import pandas as pd
 import joblib
-import uvicorn
 from fastapi import FastAPI
 from pydantic import BaseModel, Field
 from starter.ml.data import process_data
@@ -71,6 +70,3 @@ async def predict(request: IndividualInfo):
     y_pred = inference(model, X)
 
     return {'Predicted Income': lb.inverse_transform(y_pred)[0]}
-
-if __name__ == "__main__":
-    uvicorn.run('main:app', host='0.0.0.0', port=8000, reload=True)
