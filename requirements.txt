@@ -10,3 +10,4 @@ uvicorn
 dvc
 dvc-s3
 awscli
+awscliv2
