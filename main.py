@@ -16,6 +16,7 @@ if "DYNO" in os.environ and os.path.isdir(".dvc"):
     print("DVC Pull Succeeded :)")
     os.system("rm -r .dvc .apt/usr/lib/dvc")
 
+
 cat_features = [
         'workclass',
         'education',
@@ -26,6 +27,7 @@ cat_features = [
         'sex',
         'native-country',
     ]
+
 
 class IndividualInfo(BaseModel):
     age: int = Field(examples=[52])
@@ -65,9 +67,6 @@ async def root():
 
 @app.post('/prediction')
 async def predict(request: IndividualInfo):
-    model = joblib.load('model/model.pkl')
-    encoder = joblib.load('model/encoder.pkl')
-    lb = joblib.load('model/lb.pkl')
     input_data = pd.DataFrame({k: v for k,v in request.model_dump(by_alias=True).items()}, index=[0])
     X, _, _, _ = process_data(
                     input_data, categorical_features=cat_features, label=None, training=False,
