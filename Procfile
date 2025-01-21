@@ -1,1 +1,1 @@
-web: dvc pull && uvicorn main:app --host 0.0.0.0 --port $PORT
+web: ./heroku_setup.sh && uvicorn main:app --host 0.0.0.0 --port $PORT
