@@ -1,1 +1,1 @@
-web: chmod +x heroku_setup.sh && ./heroku_setup.sh && uvicorn main:app --host 0.0.0.0 --port $PORT
+web: uvicorn main:app --host 0.0.0.0 --port $PORT
